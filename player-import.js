@@ -3,25 +3,26 @@
 */
 
 var spreadSheetKey = '1-6XFD4QDoMcPSqo2WeY_o8LWM1LYI_GA6Z-FV6T4oY4';
+var dbUri = 'mongodb://localhost:27017/madden2015';
 
 var MongoClient = require('mongodb').MongoClient;
 var GoogleSpreadsheets = require("google-spreadsheets");
 var players = 0;
 
 connectToDb(function(err, collection){
-	if (err) console.log( err );
+	if (err) return console.log( err );
 
 	getSpreadsheetData(function(err, spreadsheet){
-		if (err) console.log( err );
+		if (err) return console.log( err );
 
 		getTeamData(spreadsheet.worksheets, function(err, team){
-			if (err) console.log( err );
+			if (err) return console.log( err );
 
 			getPlayerData(team, function(err, player){
 				if (err) console.log( err );
 
 				collection.insert(player, function(err, inserted){
-					if (err) console.log( err );
+					if (err) return console.log( err );
 
 					players++;
 					console.log(players);
@@ -59,7 +60,7 @@ function getSpreadsheetData(cb) {
 	GoogleSpreadsheets({
 	    key: spreadSheetKey
 	}, function(err, spreadsheet) {
-		if (err) console.log( err );
+		if (err) return console.log( err );
 		console.log(spreadsheet.title + " Loaded");
 		console.log('Teams (' + spreadsheet.worksheets.length + '):');
 
@@ -69,7 +70,7 @@ function getSpreadsheetData(cb) {
 
 function connectToDb(cb) {
 	// Connect to the db
-	MongoClient.connect("mongodb://localhost:27017/madden2015", function(err, db) {
+	MongoClient.connect(dbUri, function(err, db) {
   		if(err) { return cb(new Error("Error connecting to DB")); }
 
   		//var collection = db.collection('players');

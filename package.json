@@ -1,0 +1,24 @@
+{
+  "name": "madden15",
+  "version": "1.0.0",
+  "description": "Madden 2015 Player Rating App",
+  "main": "index.js",
+  "dependencies": {
+    "google-spreadsheets": "^0.3.0",
+    "mongodb": "^1.4.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smp4488/madden15.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smp4488/madden15/issues"
+  },
+  "homepage": "https://github.com/smp4488/madden15"
+}

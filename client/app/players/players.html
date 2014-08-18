@@ -4,75 +4,117 @@
 This is the players view.
 </div>
 
-<div class="container">
+<!-- <div class="container"> -->
   	<div class="row">
     	<div class="col-lg-12">
 <!--     		<ul>
     			<li ng-repeat="player in players">{{ player.first + ' ' + player.last}}</li>
 			</ul> -->
 			<table>
-				<tr ng-repeat="player in players">
-					<th ng-repeat="(key, value) in player">{{key}}</th>
-<!-- 					<th>ID</th>
+				<tr>
 					<th>First</th>
 					<th>Last</th>
 					<th>Position</th>
 					<th>Jersey</th>
+                    <th>Team</th>
 					<th>Overall</th>
 					<th>Speed</th>
 					<th>Acceleration</th>
-					<th></th> -->
+                    <th>Strenght</th>
+					<th>Agility</th>
+                    <th>Awareness</th>
+                    <th>Catching</th>
+                    <th>Carrying</th>
+                    <th>Throw Power</th>
+                    <th>Kick Power</th>
+                    <th>Kick Accuracy</th>
+                    <th>Run Block</th>
+                    <th>Pass Block</th>
+                    <th>Tackle</th>
+                    <th>Jumping</th>
+                    <th>Return</th>
+                    <th>Injury</th>
+                    <th>Stamina</th>
+                    <th>Toughness</th>
+                    <th>Trucking</th>
+                    <th>Elusiveness</th>
+                    <th>Ball Carrier Vision</th>
+                    <th>Stiff Arm</th>
+                    <th>Spin Move</th>
+                    <th>Juke Move</th>
+                    <th>Impact Block</th>
+                    <th>Power Move</th>
+                    <th>Finess Move</th>
+                    <th>Block Shedding</th>
+                    <th>Pursuit</th>
+                    <th>Play Recognition</th>
+                    <th>Man Coverage</th>
+                    <th>Zone Coverage</th>
+                    <th>Spectacular Catch</th>
+                    <th>Catch in Traffic</th>
+                    <th>Route Running</th>
+                    <th>Hit Power</th>
+                    <th>Press</th>
+                    <th>Release</th>
+                    <th>Throw Accuracy Short</th>
+                    <th>Throw Accuracy Medium</th>
+                    <th>Throw Accuracy Deep</th>
+                    <th>Play Action</th>
+                    <th>Throw on Run</th>
 				</tr>
 				<tr ng-repeat="player in players">
-					<td ng-repeat="(key, value) in player">{{value}}</td>
+					<!-- <td ng-repeat="(key, value) in player">{{value}}</td> -->
+                    <td>{{player.first}}</td>
+                    <td>{{player.last}}</td>
+                    <td>{{player.position}}</td>
+                    <td>{{player.jersey}}</td>
+                    <td>{{player.team}}</td>
+                    <td>{{player.overallrating}}</td>
+                    <td>{{player.speed}}</td>
+                    <td>{{player.acceleration}}</td>
+                    <td>{{player.strength}}</td>
+                    <td>{{player.agility}}</td>
+                    <td>{{player.awareness}}</td>
+                    <td>{{player.catching}}</td>
+                    <td>{{player.carrying}}</td>
+                    <td>{{player.throwpower}}</td>
+                    <td>{{player.kickpower}}</td>
+                    <td>{{player.kickaccuracy}}</td>
+                    <td>{{player.runblock}}</td>
+                    <td>{{player.passblock}}</td>
+                    <td>{{player.tackle}}</td>
+                    <td>{{player.jumping}}</td>
+                    <td>{{player.return}}</td>
+                    <td>{{player.injury}}</td>
+                    <td>{{player.stamina}}</td>
+                    <td>{{player.toughness}}</td>
+                    <td>{{player.trucking}}</td>
+                    <td>{{player.elusiveness}}</td>
+                    <td>{{player.bcvision}}</td>
+                    <td>{{player.stiffarm}}</td>
+                    <td>{{player.spinmove}}</td>
+                    <td>{{player.jukemove}}</td>
+                    <td>{{player.impactblock}}</td>
+                    <td>{{player.powermove}}</td>
+                    <td>{{player.finesseemove}}</td>
+                    <td>{{player.blockshedding}}</td>
+                    <td>{{player.pursuit}}</td>
+                    <td>{{player.playrec}}</td>
+                    <td>{{player.mancoverage}}</td>
+                    <td>{{player.zonecoverage}}</td>
+                    <td>{{player.spectacularcatch}}</td>
+                    <td>{{player.catchintraffic}}</td>
+                    <td>{{player.routerunning}}</td>
+                    <td>{{player.hitpower}}</td>
+                    <td>{{player.press}}</td>
+                    <td>{{player.release}}</td>
+                    <td>{{player.throwaccuracyshort}}</td>
+                    <td>{{player.throwaccuracymed}}</td>
+                    <td>{{player.throwaccuracydeep}}</td>
+                    <td>{{player.playaction}}</td>
+                    <td>{{player.throwonrun}}</td>
 				</tr>
 			</table>
     	</div>
 	</div>
-</div>
-
-
-<!--     "strength" : "79",
-    "agility" : "92",
-    "awareness" : "92",
-    "catching" : "98",
-    "carrying" : "76",
-    "throwpower" : "24",
-    "kickpower" : "12",
-    "kickaccuracy" : "12",
-    "runblock" : "65",
-    "passblock" : "35",
-    "tackle" : "45",
-    "jumping" : "92",
-    "return" : "25",
-    "injury" : "92",
-    "stamina" : "97",
-    "toughness" : "88",
-    "trucking" : "85",
-    "elusiveness" : "66",
-    "bcvision" : "87",
-    "stiffarm" : "88",
-    "spinmove" : "85",
-    "jukemove" : "92",
-    "impactblock" : "58",
-    "powermove" : "10",
-    "finesseemove" : "10",
-    "blockshedding" : "63",
-    "pursuit" : "45",
-    "playrec" : "26",
-    "mancoverage" : "18",
-    "zonecoverage" : "39",
-    "spectacularcatch" : "89",
-    "catchintraffic" : "99",
-    "routerunning" : "98",
-    "hitpower" : "12",
-    "press" : "10",
-    "release" : "99",
-    "throwaccuracyshort" : "15",
-    "throwaccuracymed" : "10",
-    "throwaccuracydeep" : "5",
-    "playaction" : "5",
-    "throwonrun" : "10",
-    "team" : "Bears",
-    "_id" : ObjectId("53f16f97df04fd00001cc878")
-} -->
+<!-- </div> -->

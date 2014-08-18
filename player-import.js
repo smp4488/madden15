@@ -2,7 +2,7 @@
 	Request madden data from spreadsheet (https://docs.google.com/file/d/0B3UtEYGaz83gTHFra2hrR0VWR1U/edit) and then insert all of the team and player data into a mogo DB.
 */
 var spreadSheetKey = '1-6XFD4QDoMcPSqo2WeY_o8LWM1LYI_GA6Z-FV6T4oY4';
-var dbUri = 'mongodb://localhost:27017/madden2015';
+var dbUri = 'mongodb://localhost:27017/madden15-dev';
 
 var MongoClient = require('mongodb').MongoClient;
 var GoogleSpreadsheets = require("google-spreadsheets");

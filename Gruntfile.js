@@ -17,7 +17,8 @@ module.exports = function (grunt) {
     cdnify: 'grunt-google-cdn',
     protractor: 'grunt-protractor-runner',
     injector: 'grunt-asset-injector',
-    buildcontrol: 'grunt-build-control'
+    buildcontrol: 'grunt-build-control',
+    shell : 'grunt-shell-spawn'
   });
 
   // Time how long tasks take. Can help when optimizing build times
@@ -32,6 +33,16 @@ module.exports = function (grunt) {
       // configurable paths
       client: require('./bower.json').appPath || 'client',
       dist: 'dist'
+    },
+    //Shell
+    shell: {
+        // Start mongo
+        mongo : {
+          command: 'mongod',
+          options: {
+              async: true
+          }
+        }
     },
     express: {
       options: {
@@ -559,7 +570,8 @@ module.exports = function (grunt) {
       return grunt.task.run([
         'clean:server',
         'env:all',
-        'injector:less', 
+        'injector:less',
+        'shell:mongo',
         'concurrent:server',
         'injector',
         'wiredep',
@@ -571,7 +583,8 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'env:all',
-      'injector:less', 
+      'injector:less',
+      'shell:mongo',
       'concurrent:server',
       'injector',
       'wiredep',
@@ -601,7 +614,7 @@ module.exports = function (grunt) {
       return grunt.task.run([
         'clean:server',
         'env:all',
-        'injector:less', 
+        'injector:less',
         'concurrent:test',
         'injector',
         'autoprefixer',
@@ -614,7 +627,7 @@ module.exports = function (grunt) {
         'clean:server',
         'env:all',
         'env:test',
-        'injector:less', 
+        'injector:less',
         'concurrent:test',
         'injector',
         'wiredep',
@@ -632,7 +645,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'injector:less', 
+    'injector:less',
     'concurrent:dist',
     'injector',
     'wiredep',

@@ -15,6 +15,42 @@
     padding: 0.2em 0;
 }
 
+/**
+ * Table Styles
+ */
+
+ th {
+ 	height: 140px;
+ 	white-space: nowrap;
+
+ 	transform:
+ 	  /* Magic Numbers */
+ 	  translate(25px, 51px)
+ 	  /* 45 is really 360 - 45 */
+ 	  rotate(315deg);
+ 	width: 30px;
+ }
+
+ th.rotate {
+   /* Something you can count on */
+   height: 140px;
+   white-space: nowrap;
+ }
+
+ th.rotate > div {
+   transform:
+     /* Magic Numbers */
+     translate(25px, 51px)
+     /* 45 is really 360 - 45 */
+     rotate(315deg);
+   width: 30px;
+ }
+ th.rotate > div > span {
+   border-bottom: 1px solid #ccc;
+   padding: 5px 10px;
+ }
+
+
 // injector
 @import 'main/main.less';
 @import 'players/players.less';
